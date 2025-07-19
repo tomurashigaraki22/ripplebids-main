@@ -1,103 +1,122 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "./components/ui/button"
+import { ArrowRight, Zap, Shield, Globe } from "lucide-react"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8">
+            <span className="text-green-400 glow-text">Claim Your XRPB Tokens!</span>
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="max-w-4xl mx-auto mb-12 p-8 rounded-2xl border-2 border-green-500/30 bg-black/50 backdrop-blur-sm">
+            <h2 className="text-2xl sm:text-3xl font-bold text-green-400 mb-6">
+              XRPB Token Launch: Dual-Chain Powerhouse
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              The XRPB token powers the RippleBids decentralized marketplace across two leading blockchains, offering
+              unmatched versatility for transactions and premium features. Join the future of e-commerce!
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-green-400">XRPB on XRPL EVM Sidechain:</p>
+                    <p className="text-gray-300 text-sm">
+                      The primary currency for all marketplace transactions, leveraging smart contracts for secure,
+                      fast, and low-cost payments. Liquidity pool available on{" "}
+                      <Link href="https://xrise33.com" className="text-green-400 hover:underline">
+                        Xrise33.com
+                      </Link>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-green-400">XRPB-SOL on Solana:</p>
+                    <p className="text-gray-300 text-sm">
+                      Used for premium features such as advanced analytics, priority listings, and exclusive marketplace
+                      tools.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Link href="/claim">
+              <Button size="lg" className="bg-green-500 hover:bg-green-600 text-black font-bold px-8 py-4 text-lg">
+                Start Claiming Process
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/whitepaper">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-green-500 text-green-400 hover:bg-green-500/10 px-8 py-4 text-lg bg-transparent"
+              >
+                Read Whitepaper
+              </Button>
+            </Link>
+          </div>
+
+          <p className="text-sm text-gray-400 mb-8">
+            Learn more in our{" "}
+            <Link href="/whitepaper" className="text-green-400 hover:underline">
+              Whitepaper
+            </Link>{" "}
+            or contact{" "}
+            <Link href="mailto:support@ripplebids.com" className="text-green-400 hover:underline">
+              support@ripplebids.com
+            </Link>{" "}
+            for details.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-green-500/5">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-green-400">Why Choose XRPB?</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 rounded-2xl border border-green-500/20 bg-black/30 backdrop-blur-sm">
+              <Zap className="h-12 w-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-green-400">Lightning Fast</h3>
+              <p className="text-gray-300">
+                Experience ultra-fast transactions with minimal fees across both XRPL and Solana networks.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl border border-green-500/20 bg-black/30 backdrop-blur-sm">
+              <Shield className="h-12 w-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-green-400">Secure & Reliable</h3>
+              <p className="text-gray-300">
+                Built on proven blockchain technology with smart contract security and decentralized governance.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl border border-green-500/20 bg-black/30 backdrop-blur-sm">
+              <Globe className="h-12 w-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-green-400">Cross-Chain Power</h3>
+              <p className="text-gray-300">
+                Seamlessly operate across multiple blockchains with unified token utility and liquidity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
