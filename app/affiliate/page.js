@@ -75,7 +75,7 @@ export default function AffiliateScreen() {
     <div className="min-h-screen bg-black text-white px-4 py-10">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-lg">
-          <h1 className="text-4xl font-bold text-green-400 mb-2">
+          <h1 className="text-4xl font-bold text-green-400 glow-text mb-2">
             Create a Ripple in the World
           </h1>
           <p className="text-gray-300 mb-8">
@@ -142,7 +142,7 @@ export default function AffiliateScreen() {
             >
               <div>
                 <label htmlFor="email" className="block mb-1">
-                  <Mail className="inline mr-1" /> Email <span className="text-green-400">*</span>
+                  <Mail className="inline mr-1" /> Email <span className="text-green-400 glow-text">*</span>
                 </label>
                 <input
                   type="email"
@@ -156,7 +156,7 @@ export default function AffiliateScreen() {
               </div>
               <div>
                 <label htmlFor="description" className="block mb-1">
-                  Why RippleBids? <span className="text-green-400">*</span>
+                  Why RippleBids? <span className="text-green-400 glow-text">*</span>
                 </label>
                 <textarea
                   id="description"

@@ -44,7 +44,7 @@ export default function ClaimPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-green-400 mb-4">Welcome to XRPB Token Claim</h2>
+              <h2 className="text-2xl font-bold text-green-400 glow-text mb-4">Welcome to XRPB Token Claim</h2>
               <p className="text-gray-300">
                 Join the RippleBids ecosystem and claim your XRPB tokens. Follow our step-by-step process to ensure a
                 smooth claiming experience.
@@ -53,7 +53,7 @@ export default function ClaimPage() {
 
             <div className="space-y-4">
               <div className="p-4 rounded-lg border border-green-500/20 bg-green-500/5">
-                <h3 className="font-semibold text-green-400 mb-2">Important Information:</h3>
+                <h3 className="font-semibold text-green-400 glow-text mb-2">Important Information:</h3>
                 <ul className="text-sm text-gray-300 space-y-1">
                   <li>• Tokens will be distributed after verification in Q2 2025</li>
                   <li>• Ensure your ERC-20 wallet is compatible with XRPL EVM Sidechain</li>
@@ -69,7 +69,7 @@ export default function ClaimPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-green-400 mb-4">Email Registration</h2>
+              <h2 className="text-2xl font-bold text-green-400 glow-text mb-4">Email Registration</h2>
               <p className="text-gray-300">
                 Enter your email address to receive updates about your token claim and distribution.
               </p>
@@ -77,7 +77,7 @@ export default function ClaimPage() {
 
             <div className="space-y-4">
               <div>
-                <Label htmlFor="email" className="text-green-400">
+                <Label htmlFor="email" className="text-green-400 glow-text">
                   Email Address
                 </Label>
                 <Input
@@ -97,7 +97,7 @@ export default function ClaimPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-green-400 mb-4">Wallet Addresses</h2>
+              <h2 className="text-2xl font-bold text-green-400 glow-text mb-4">Wallet Addresses</h2>
               <p className="text-gray-300">
                 Provide your XRPL and ERC-20 wallet addresses to receive your XRPB tokens.
               </p>
@@ -105,7 +105,7 @@ export default function ClaimPage() {
 
             <div className="space-y-4">
               <div>
-                <Label htmlFor="xrpl" className="text-green-400">
+                <Label htmlFor="xrpl" className="text-green-400 glow-text">
                   XRPL Wallet (r-address)
                 </Label>
                 <Input
@@ -118,7 +118,7 @@ export default function ClaimPage() {
               </div>
 
               <div>
-                <Label htmlFor="erc20" className="text-green-400">
+                <Label htmlFor="erc20" className="text-green-400 glow-text">
                   ERC-20 Wallet (0x address)
                 </Label>
                 <Input
@@ -137,14 +137,14 @@ export default function ClaimPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-green-400 mb-4">Review & Submit</h2>
+              <CheckCircle className="h-16 w-16 text-green-400 glow-text mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-green-400 glow-text mb-4">Review & Submit</h2>
               <p className="text-gray-300">Please review your information before submitting your claim.</p>
             </div>
 
             <div className="space-y-4">
               <div className="p-4 rounded-lg border border-green-500/20 bg-black/30">
-                <h3 className="font-semibold text-green-400 mb-3">Your Information:</h3>
+                <h3 className="font-semibold text-green-400 glow-text mb-3">Your Information:</h3>
                 <div className="space-y-2 text-sm">
                   <p>
                     <span className="text-gray-400">Email:</span> <span className="text-white">{formData.email}</span>
@@ -186,7 +186,7 @@ export default function ClaimPage() {
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">Claim Your XRPB Tokens</h1>
+          <h1 className="text-4xl font-bold text-green-400 glow-text glow-text mb-4">Claim Your XRPB Tokens</h1>
           <p className="text-gray-300">
             Step {currentStep} of {totalSteps}
           </p>
@@ -223,7 +223,7 @@ export default function ClaimPage() {
                 variant="outline"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="border-green-500/30 text-green-400 hover:bg-green-500/10 bg-transparent"
+                className="border-green-500/30 text-green-400 glow-text hover:bg-green-500/10 bg-transparent"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Previous

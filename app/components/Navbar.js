@@ -31,7 +31,7 @@ export default function Navbar() {
               <div className="w-8 h-8 rounded-full flex items-center justify-center">
                 <Image src={Logo} alt="RippleBids Logo"/>
               </div>
-            <span className="text-xl font-bold text-green-400">RippleBids</span>
+            <span className="text-xl font-bold text-green-400 glow-text">RippleBids</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,17 +50,17 @@ export default function Navbar() {
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-white hover:text-green-400">
+              <Button variant="ghost" size="icon" className="text-white hover:text-green-400 glow-text">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-black border-green-500/20 w-80">
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-black font-bold text-sm">R</span>
-                  </div>
-                  <span className="text-xl font-bold text-green-400">RippleBids</span>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Image src={Logo} alt="RippleBids Logo"/>
+              </div>
+                  <span className="text-xl font-bold text-green-400 glow-text">RippleBids</span>
                 </Link>
               </div>
               <div className="flex flex-col space-y-4">

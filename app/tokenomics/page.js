@@ -5,11 +5,11 @@ const TokenomicsScreen = () => {
   return (
     <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white px-6 py-10">
       <div className="max-w-5xl mx-auto bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 shadow-xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-green-400 mb-4">XRPB Tokenomics</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-green-400 glow-text mb-4">XRPB Tokenomics</h1>
         <p className="text-gray-300 mb-6">
           The XRPB token powers RippleBids, a decentralized marketplace on the XRP Ledger EVM Sidechain. With a fixed
           3B supply, XRPB enables transactions, governance, and rewards. Liquidity is on
-          <a href="https://xrise33.com" target="_blank" className="text-green-400 underline ml-1">
+          <a href="https://xrise33.com" target="_blank" className="text-green-400 glow-text underline ml-1">
             Xrise33.com
           </a>
           .
@@ -87,8 +87,8 @@ const TokenomicsScreen = () => {
         <p className="text-gray-300 mb-4">
           Claim XRPB tokens and be part of the decentralized commerce revolution.
           <br />
-          Read our <a href="/whitepaper-html" className="text-green-400 underline">Whitepaper</a> or contact
-          <a href="mailto:support@ripplebids.com" className="text-green-400 underline ml-1">support@ripplebids.com</a>
+          Read our <a href="/whitepaper-html" className="text-green-400 glow-text underline">Whitepaper</a> or contact
+          <a href="mailto:support@ripplebids.com" className="text-green-400 glow-text underline ml-1">support@ripplebids.com</a>
         </p>
 
         <a

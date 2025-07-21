@@ -5,7 +5,7 @@ const PolicyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white px-4 py-12">
       <section className="max-w-5xl mx-auto backdrop-blur-lg bg-white/5 rounded-3xl p-8 shadow-2xl border border-green-400">
-        <h1 className="text-4xl font-bold text-green-400 mb-4">Rules & Policy</h1>
+        <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">Rules & Policy</h1>
         <p className="text-gray-300 mb-8">
           Welcome to RippleBids’ decentralized marketplace on the XRP Ledger. Our rules and policies ensure a secure, fair, and transparent experience for all users and XRPB presale participants. Dive into our futuristic framework below!
         </p>
@@ -24,8 +24,8 @@ const PolicyPage = () => {
 
         <p className="text-gray-300 mt-6">
           Policy updates will be posted here and announced on{' '}
-          <a href="https://x.com/rippleBids" className="text-green-400 underline">X</a> and other channels. Questions? Reach out at{' '}
-          <a href="/contact-html" className="text-green-400 underline">support@ripplebids.com</a>.
+          <a href="https://x.com/rippleBids" className="text-green-400 glow-text underline">X</a> and other channels. Questions? Reach out at{' '}
+          <a href="/contact-html" className="text-green-400 glow-text underline">support@ripplebids.com</a>.
         </p>
 
         <div className="mt-8 text-center">
@@ -35,7 +35,7 @@ const PolicyPage = () => {
 
       <footer className="mt-20 text-center text-gray-400">
         <p className="mb-3">© 2025 RippleBids. All rights reserved.</p>
-        <div className="flex justify-center gap-6 text-green-400 text-xl">
+        <div className="flex justify-center gap-6 text-green-400 glow-text text-xl">
           <a href="https://x.com/ripplebids" target="_blank" rel="noopener noreferrer"><Twitter className="hover:text-green-300" /></a>
           <a href="https://t.me/+MFu9bioLH2Q1NWYx" target="_blank" rel="noopener noreferrer"><Send className="hover:text-green-300" /></a>
           <a href="https://www.tiktok.com/@ripplebids" target="_blank" rel="noopener noreferrer"><Music className="hover:text-green-300" /></a>

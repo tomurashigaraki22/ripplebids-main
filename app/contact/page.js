@@ -25,12 +25,12 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black to-gray-900">
       <section className="max-w-5xl mx-auto bg-black/60 border border-green-500/20 backdrop-blur-md p-8 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-semibold text-green-400 mb-4">Contact RippleBids</h2>
+        <h2 className="text-3xl font-semibold text-green-400 glow-text mb-4">Contact RippleBids</h2>
         <p className="text-gray-300 mb-6">
           We’re here to connect! Whether you have questions, feedback, or need support, our Ohio-based team is ready to respond via
           <a
             href="mailto:support@ripplebids.com"
-            className="text-green-400 underline hover:text-green-300 ml-1"
+            className="text-green-400 glow-text underline hover:text-green-300 ml-1"
           >
             support@ripplebids.com
           </a>. Drop us a message below!
@@ -62,7 +62,7 @@ const ContactPage = () => {
       <footer className="mt-12 text-center text-gray-400">
         <div className="footer-content p-6">
           <p>© 2025 RippleBids. All rights reserved.</p>
-          <div className="social-links mt-4 flex justify-center gap-6 text-green-400 text-[24px]">
+          <div className="social-links mt-4 flex justify-center gap-6 text-green-400 glow-text text-[24px]">
             <a
               href="https://x.com/ripplebids"
               target="_blank"
