@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "RippleBids - Claim Your XRPB Tokens",
+  title: "RippleBids - Welcome To RippleBids",
   description: "The XRPB token powers the RippleBids decentralized marketplace across two leading blockchains.",
 }
 

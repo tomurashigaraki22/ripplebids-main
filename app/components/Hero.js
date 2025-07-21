@@ -3,7 +3,7 @@ export default function Hero() {
   return (
     <section className="w-full bg-black text-white py-20 px-6 text-center">
       <h1 className="text-5xl sm:text-6xl font-extrabold text-[#39FF14] mb-6" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>
-        Claim Your XRPB Tokens!
+      Welcome To RippleBids!
       </h1>
       <div className="bg-black border border-[#39FF14] rounded-xl max-w-3xl mx-auto p-8 shadow-lg">
         <h2 className="text-3xl text-[#39FF14] mb-4 font-bold">

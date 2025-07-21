@@ -9,7 +9,7 @@ export default function HomePage() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8">
-            <span className="text-green-400 glow-text">Claim Your XRPB Tokens!</span>
+            <span className="text-green-400 glow-text">Welcome To RippleBids!</span>
           </h1>
 
           <div className="max-w-4xl mx-auto mb-12 p-8 rounded-2xl border-2 border-green-500/30 bg-black/50 backdrop-blur-sm">
