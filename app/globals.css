@@ -1,37 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #000000;
+    color: #ffffff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.37),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card:hover {
+    @apply border-[#39FF14]/30;
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.37),
+      0 0 20px rgba(57, 255, 20, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14;
+  }
+
+  .glow-text-subtle {
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
+  }
+
+  .neon-button {
+    @apply px-8 py-3 bg-transparent border-2 border-[#39FF14] text-[#39FF14] rounded-lg font-semibold transition-all duration-300 hover:bg-[#39FF14] hover:text-black hover:shadow-lg;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    text-shadow: 0 0 5px #39FF14;
+  }
+
+  .neon-button:hover {
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6), inset 0 0 20px rgba(57, 255, 20, 0.2);
+    text-shadow: none;
+  }
+
+  .neon-divider {
+    @apply border-t border-[#39FF14]/30;
+    box-shadow: 0 1px 10px rgba(57, 255, 20, 0.2);
+  }
+
+  .profile-image {
+    @apply rounded-full object-cover ring-2 ring-[#39FF14]/50 transition-all duration-300;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+  }
+
+  .profile-image:hover {
+    @apply ring-[#39FF14];
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+  }
+
+  .feature-list {
+    @apply space-y-3;
+  }
+
+  .feature-item {
+    @apply flex items-start space-x-3 p-3 rounded-lg bg-white/5 border border-white/10 transition-all duration-300 hover:border-[#39FF14]/30 hover:bg-white/10;
+  }
+
+  .feature-icon {
+    @apply w-2 h-2 rounded-full bg-[#39FF14] mt-2 flex-shrink-0;
+    box-shadow: 0 0 10px #39FF14;
+  }
 }
 
-.glow-text {
-  color: #39FF14; /* Neon green */
-  text-shadow:
-    0 0 1px #39FF14,
-    0 0 2px #39FF14,
-    0 0 3px #39FF14,
-    0 0 10px #00ff84,
-    0 0 20px #00ff84;
-  font-weight: bold;
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #39FF14, #00FF88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-dark-gradient {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  }
+
+  .bg-card-gradient {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  }
 }
