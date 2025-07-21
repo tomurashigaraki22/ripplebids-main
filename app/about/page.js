@@ -1,149 +1,114 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
-import { Users, Target, Lightbulb, Shield } from "lucide-react"
+import React from "react";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">About RippleBids</h1>
-          <p className="text-xl text-gray-300">Pioneering the future of decentralized e-commerce</p>
+    <section className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black to-gray-900">
+      <div className="max-w-5xl mx-auto bg-black/60 border border-green-500/20 backdrop-blur-md p-8 rounded-2xl shadow-lg">
+        <h1 className="text-4xl font-bold text-green-400 mb-6">Who We Are at RippleBids</h1>
+        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+          We’re a dedicated board from Ohio, USA, united by a vision to make e-commerce fair, affordable, and secure for all. RippleBids is more than a platform—it’s a promise to empower sellers, buyers, and investors.
+        </p>
+
+        <div className="border-t border-green-400 my-6" />
+
+        <h2 className="text-2xl font-semibold text-green-400 mb-4">Our Story</h2>
+        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          In the heart of Ohio, we watched small businesses struggle under the weight of Amazon and eBay’s high fees. That sparked RippleBids—a decentralized marketplace where you keep more of your money.
+        </p>
+        <ul className="list-disc list-inside text-gray-300 mb-6 space-y-2">
+          <li><span className="text-green-400 font-semibold">Save Money:</span> Fees of 1.5–3.5% vs. Amazon’s 8–15% or eBay’s 13%+.</li>
+          <li><span className="text-green-400 font-semibold">Feel Secure:</span> Escrow guarantees delivery; blockchain ensures authenticity.</li>
+          <li><span className="text-green-400 font-semibold">Be Empowered:</span> Trade globally with just an XRPL wallet like Xaman.</li>
+        </ul>
+
+        <div className="border-t border-green-400 my-6" />
+
+        <h2 className="text-2xl font-semibold text-green-400 mb-4">Why Trust Us?</h2>
+        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          Trust is everything. Every RippleBids transaction is etched on the XRP Ledger’s immutable blockchain, open for all to verify. Our funds are locked in a multi-signature wallet requiring all five board members’ approval.
+        </p>
+        <ul className="list-disc list-inside text-gray-300 mb-6 space-y-2">
+          <li><span className="text-green-400 font-semibold">Immutable Ledger:</span> 150+ XRPL validators secure every transaction.</li>
+          <li><span className="text-green-400 font-semibold">Secure Funds:</span> 5/5 multi-sig wallet via Xaman and XRPL Toolkit.</li>
+          <li><span className="text-green-400 font-semibold">Open Process:</span> Community-driven hiring and governance.</li>
+        </ul>
+
+        <div className="border-t border-green-400 my-6" />
+
+        <h2 className="text-2xl font-semibold text-green-400 mb-4">Meet Our Board</h2>
+        <p className="text-gray-300 mb-6">
+          Our five board members are Ohio proud, driven by a shared passion for fairness and innovation.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {[
+            {
+              name: "Brendyn T.",
+              title: "CFO",
+              img: "https://cdn.prod.website-files.com/680cdf8611ae712d28ae981c/683b53aebcfc50b6b603122f_IMG_3081.webp",
+              desc: "Expert in financial structure. Overlooks RippleBids’ finances professionally since 2025.",
+            },
+            {
+              name: "Devin H.",
+              title: "CEO & Founder",
+              img: "https://cdn.prod.website-files.com/680cdf8611ae712d28ae981c/683b53bf85bacfab9b47c6a6_IMG_3713.webp",
+              desc: "Founded RippleBids in 2025 and works tirelessly to make it the future of e-commerce.",
+            },
+            {
+              name: "Tim T.",
+              title: "COO",
+              img: "https://cdn.prod.website-files.com/680cdf8611ae712d28ae981c/683b53b49e48b242548294e3_IMG_3425.webp",
+              desc: "Crypto enthusiast & marketing lead, connecting RippleBids globally since 2025.",
+            },
+            {
+              name: "Michael K.",
+              title: "CMO",
+              img: "https://cdn.prod.website-files.com/680cdf8611ae712d28ae981c/683b539fcd8fe3c5bae907e3_IMG_2433.webp",
+              desc: "Media mastermind with strong leadership skills. Marketing RippleBids worldwide.",
+            },
+            {
+              name: "Cole C.",
+              title: "CTO",
+              img: "https://cdn.prod.website-files.com/680cdf8611ae712d28ae981c/683b53a87c5267c8b67592da_01BA7813-9846-40EB-A182-3E8750571B3F.jpg",
+              desc: "Background in full-stack dev. Building RippleBids tech from the ground up since 2025.",
+            },
+          ].map((member, idx) => (
+            <div
+              key={idx}
+              className="bg-black/70 p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300 text-center"
+            >
+              <img
+                src={member.img}
+                alt={member.name}
+                className="mx-auto mb-3 rounded-full w-24 h-24 object-cover ring-2 ring-green-400"
+              />
+              <h3 className="text-green-400 font-bold">{member.name}</h3>
+              <p className="text-sm text-gray-400 italic mb-1">{member.title}</p>
+              <p className="text-sm text-gray-300">{member.desc}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="space-y-8">
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-green-400 mb-6">Our Vision</h2>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                RippleBids envisions a world where e-commerce is truly decentralized, transparent, and accessible to
-                everyone. By leveraging the power of blockchain technology across multiple networks, we're creating a
-                marketplace that empowers both buyers and sellers with unprecedented control, security, and efficiency.
-              </p>
-            </CardContent>
-          </Card>
+        <p className="text-gray-300 mt-6 text-center">
+          We’re expanding! Email <a href="/contact-html" className="text-green-400 underline">Ripplebids@outlook.com</a> to join us.
+        </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-green-400 flex items-center">
-                  <Target className="mr-2 h-5 w-5" />
-                  Our Mission
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-300">
-                <p>
-                  To revolutionize online commerce by creating a decentralized marketplace that eliminates
-                  intermediaries, reduces fees, and provides a secure, transparent trading environment for users
-                  worldwide.
-                </p>
-              </CardContent>
-            </Card>
+        <div className="border-t border-green-400 my-6" />
 
-            <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-green-400 flex items-center">
-                  <Lightbulb className="mr-2 h-5 w-5" />
-                  Innovation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-300">
-                <p>
-                  We're pioneering dual-chain architecture that combines the strengths of XRPL EVM Sidechain and Solana,
-                  offering users the best of both worlds in terms of speed, cost, and functionality.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+        <h2 className="text-2xl font-semibold text-green-400 mb-4">Our Vision</h2>
+        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+          By 2030, RippleBids aims to lead the $8.1T e-commerce market with 1M+ users, AI analytics, NFT trading, and cross-chain support. Join our XRPB presale (1 XRP = 5,000 XRPB).
+        </p>
 
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400">Why Choose RippleBids?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Shield className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-green-400 mb-1">Security First</h3>
-                      <p className="text-gray-300 text-sm">
-                        Built with enterprise-grade security features and audited smart contracts to protect user
-                        assets.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <Users className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-green-400 mb-1">Community Driven</h3>
-                      <p className="text-gray-300 text-sm">
-                        Governed by the community with transparent decision-making and democratic processes.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <span className="text-black text-xs font-bold">$</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-green-400 mb-1">Low Fees</h3>
-                      <p className="text-gray-300 text-sm">
-                        Minimal transaction costs compared to traditional e-commerce platforms and centralized
-                        exchanges.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <span className="text-black text-xs font-bold">⚡</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-green-400 mb-1">Fast Transactions</h3>
-                      <p className="text-gray-300 text-sm">
-                        Lightning-fast transaction processing across both XRPL and Solana networks.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400">The Team</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300">
-              <p className="mb-4">
-                RippleBids is built by a team of experienced blockchain developers, e-commerce experts, and
-                cryptocurrency enthusiasts who are passionate about creating the future of decentralized commerce.
-              </p>
-              <p>
-                Our diverse team brings together expertise from traditional finance, blockchain technology, user
-                experience design, and marketplace operations to deliver a world-class platform.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-green-500/10 border-green-500/30 backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-xl font-bold text-green-400 mb-4">Join Our Journey</h3>
-              <p className="text-gray-300 mb-4">
-                Be part of the decentralized commerce revolution. Claim your XRPB tokens today and help shape the future
-                of online marketplaces.
-              </p>
-              <p className="text-sm text-gray-400">
-                Together, we're building more than just a marketplace – we're creating a new economy.
-              </p>
-            </CardContent>
-          </Card>
+        <div className="text-center">
+          <a
+            href="/"
+            className="inline-block px-6 py-3 bg-green-500 text-black font-bold rounded hover:bg-green-600 transition"
+          >
+            Invest in XRPB
+          </a>
         </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }

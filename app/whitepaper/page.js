@@ -2,9 +2,9 @@ import { Button } from "../components/ui/button"
 
 export default function WhitepaperPage() {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <section className="hero">
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black to-gray-900">
+      <div className="max-w-6xl mx-auto">
+      <section className="max-w-6xl mx-auto bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-green-500/20 shadow-lg">
           <div className="glass-container">
             <h1 className="text-4xl font-bold text-green-400 glow-text mb-6">The Marketplace of the Future</h1>
             <p className="text-xl text-gray-300 mb-8">

@@ -2,146 +2,83 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { CheckCircle, Circle, Clock } from "lucide-react"
 
 export default function RoadmapPage() {
-  const roadmapItems = [
-    {
-      phase: "Phase 1",
-      title: "Foundation & Launch",
-      period: "Q4 2024 - Q1 2025",
-      status: "completed",
-      items: [
-        "XRPB token smart contract development",
-        "XRPL EVM Sidechain integration",
-        "Solana network deployment",
-        "Initial liquidity pool creation",
-        "Community building and partnerships",
-      ],
-    },
-    {
-      phase: "Phase 2",
-      title: "Token Distribution & Marketplace Beta",
-      period: "Q2 2025",
-      status: "current",
-      items: [
-        "XRPB token distribution to claimants",
-        "RippleBids marketplace beta launch",
-        "Cross-chain bridge implementation",
-        "Basic trading and listing features",
-        "User onboarding and tutorials",
-      ],
-    },
-    {
-      phase: "Phase 3",
-      title: "Advanced Features & Scaling",
-      period: "Q3 2025",
-      status: "upcoming",
-      items: [
-        "Advanced analytics dashboard",
-        "Premium seller tools",
-        "Mobile application launch",
-        "Enhanced security features",
-        "Multi-language support",
-      ],
-    },
-    {
-      phase: "Phase 4",
-      title: "Ecosystem Expansion",
-      period: "Q4 2025",
-      status: "upcoming",
-      items: [
-        "Third-party integrations",
-        "API marketplace launch",
-        "Governance token features",
-        "Staking and rewards program",
-        "Global marketplace expansion",
-      ],
-    },
-    {
-      phase: "Phase 5",
-      title: "Innovation & Growth",
-      period: "2026 & Beyond",
-      status: "future",
-      items: [
-        "AI-powered recommendations",
-        "NFT marketplace integration",
-        "DeFi lending and borrowing",
-        "Enterprise solutions",
-        "Metaverse commerce integration",
-      ],
-    },
-  ]
-
-  const getStatusIcon = (status) => {
-    switch (status) {
-      case "completed":
-        return <CheckCircle className="h-6 w-6 text-green-400" />
-      case "current":
-        return <Clock className="h-6 w-6 text-yellow-400" />
-      default:
-        return <Circle className="h-6 w-6 text-gray-400" />
-    }
-  }
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "completed":
-        return "border-green-500/50 bg-green-500/10"
-      case "current":
-        return "border-yellow-500/50 bg-yellow-500/10"
-      default:
-        return "border-gray-500/30 bg-black/30"
-    }
-  }
-
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">RippleBids Roadmap</h1>
-          <p className="text-xl text-gray-300">Our journey to revolutionize decentralized e-commerce</p>
-        </div>
+        <section className="hero">
+          <div className="glass-container">
+            <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">RippleBids Roadmap</h1>
+            <p className="text-xl text-gray-300 mb-8">
+              RippleBids is forging the future of e-commerce with a decentralized marketplace on the XRP Ledger, powered by the XRPB token. Our plan from 2025 to 2030 will disrupt Amazon and eBay, delivering low fees, instant payments, and global inclusivity.
+            </p>
 
-        <div className="space-y-8">
-          {roadmapItems.map((item, index) => (
-            <Card key={index} className={`backdrop-blur-sm ${getStatusColor(item.status)}`}>
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    {getStatusIcon(item.status)}
-                    <div>
-                      <h2 className="text-xl font-bold text-green-400">{item.phase}</h2>
-                      <h3 className="text-lg text-white">{item.title}</h3>
-                    </div>
-                  </div>
-                  <span className="text-sm text-gray-400 font-normal">{item.period}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {item.items.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-2 text-gray-300">
-                      <div className="w-2 h-2 bg-green-400 rounded-full flex-shrink-0"></div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
+            <div className="section-divider border-t border-green-500 my-8"></div>
+
+            <div className="roadmap-timeline space-y-8">
+              <div className="roadmap-item">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">Q1-Q2 2025: Foundation & Presale</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Launch website and social channels (X, Telegram, TikTok, Discord).</li>
+                  <li>Deploy XRPB token (3B total supply) with multi-signature wallet (5/5 quorum).</li>
+                  <li>Start presale: 500M XRPB for 100k XRP (1 XRP = 5,000 XRPB).</li>
+                  <li>Release whitepaper detailing blockchain-based marketplace vision.</li>
+                  <li>Hire initial team: Graphic Designer, Community Lead.</li>
+                  <li>Establish investor tiers (Tier 1–3: $1–$1,001+).</li>
                 </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              </div>
 
-        <div className="mt-12 text-center">
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <h3 className="text-xl font-bold text-green-400 mb-4">Stay Updated</h3>
-              <p className="text-gray-300 mb-4">
-                Follow our progress and get the latest updates on our development milestones.
-              </p>
-              <p className="text-sm text-gray-400">
-                Roadmap items and timelines are subject to change based on development progress and market conditions.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+              <div className="roadmap-item">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">Q3-Q4 2025: Platform Alpha & Team Expansion</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Develop RippleBids alpha: XRPB payments, escrow, product authenticity tracking.</li>
+                  <li>Distribute presale tokens to Xaman wallets.</li>
+                  <li>Recruit developers, Security Advisor, Senior Compliance Officer.</li>
+                  <li>Launch affiliate marketing program with referral links.</li>
+                  <li>Partner with Ohio-based blockchain firms and XRPL validators.</li>
+                  <li>Begin community engagement via Discord giveaways.</li>
+                </ul>
+              </div>
+
+              <div className="roadmap-item">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">2026: Beta Launch & Global Outreach</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Launch RippleBids beta with NFT trading and decentralized reviews.</li>
+                  <li>List XRPB on Uniswap for liquidity (10% pool allocation).</li>
+                  <li>Expand marketing to Asia, Europe, and underbanked regions.</li>
+                  <li>Integrate Xaman wallet for seamless mobile transactions.</li>
+                  <li>Hire Relations Manager for investor outreach.</li>
+                </ul>
+              </div>
+
+              <div className="roadmap-item">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">2027: Mainnet & Governance</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Launch RippleBids mainnet with 1.5–3.5% fees and $25–$50 memberships.</li>
+                  <li>List XRPB on Binance, targeting $8.1T e-commerce market.</li>
+                  <li>Release iOS/Android apps with Xaman integration.</li>
+                  <li>Hire Sales Manager and Customer Support team.</li>
+                  <li>Implement blockchain-based reputation scores.</li>
+                </ul>
+              </div>
+
+              <div className="roadmap-item">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">2028-2030: Global Dominance</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Integrate AI analytics for sellers and cross-chain trading (Ethereum, Solana).</li>
+                  <li>Reach 1M active users and $1B in transaction volume.</li>
+                  <li>Establish RippleBids as the leading decentralized marketplace.</li>
+                  <li>Support Central Bank Digital Currencies (CBDCs) via XRPL.</li>
+                  <li>Expand with Onboarding Support for new users.</li>
+                  <li>Launch global ad campaigns with top affiliates.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-gray-300 mt-8">
+              Join the revolution! Invest in the <a href="/" className="highlight">XRPB presale</a> or contact <a href="/contact-html" className="btn-primary">Support</a> for investor and affiliate opportunities.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   )

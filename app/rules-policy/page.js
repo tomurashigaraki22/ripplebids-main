@@ -1,157 +1,118 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
-import { Shield, AlertTriangle, FileText, Users } from "lucide-react"
+import React from 'react';
+import { Twitter, Send, Music, Eraser } from 'lucide-react';
 
-export default function RulesPolicyPage() {
+const PolicyPage = () => {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">Rules & Policy</h1>
-          <p className="text-xl text-gray-300">Terms of service, privacy policy, and community guidelines</p>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white px-4 py-12">
+      <section className="max-w-5xl mx-auto backdrop-blur-lg bg-white/5 rounded-3xl p-8 shadow-2xl border border-green-400">
+        <h1 className="text-4xl font-bold text-green-400 mb-4">Rules & Policy</h1>
+        <p className="text-gray-300 mb-8">
+          Welcome to RippleBids’ decentralized marketplace on the XRP Ledger. Our rules and policies ensure a secure, fair, and transparent experience for all users and XRPB presale participants. Dive into our futuristic framework below!
+        </p>
+
+        {policySections.map(({ title, content }, idx) => (
+          <div key={idx} className="mb-10 bg-white/10 p-6 rounded-2xl border border-green-400">
+            <h2 className="text-2xl font-semibold text-green-300 mb-3">{title}</h2>
+            <p className="text-gray-300 mb-3">{content.intro}</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-200">
+              {content.items.map((item, index) => (
+                <li key={index}><strong>{item.label}</strong> {item.text}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        <p className="text-gray-300 mt-6">
+          Policy updates will be posted here and announced on{' '}
+          <a href="https://x.com/rippleBids" className="text-green-400 underline">X</a> and other channels. Questions? Reach out at{' '}
+          <a href="/contact-html" className="text-green-400 underline">support@ripplebids.com</a>.
+        </p>
+
+        <div className="mt-8 text-center">
+          <a href="/" className="inline-block bg-green-500 text-black font-semibold py-2 px-6 rounded-full shadow hover:bg-green-600 transition">Join the Presale</a>
         </div>
+      </section>
 
-        <div className="space-y-8">
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400 flex items-center">
-                <FileText className="mr-2 h-5 w-5" />
-                Terms of Service
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
-              <h3 className="text-green-400 font-semibold">1. Acceptance of Terms</h3>
-              <p>
-                By accessing and using the RippleBids platform and claiming XRPB tokens, you agree to be bound by these
-                Terms of Service and all applicable laws and regulations.
-              </p>
-
-              <h3 className="text-green-400 font-semibold">2. Token Claim Eligibility</h3>
-              <ul className="space-y-1 ml-4">
-                <li>• You must be at least 18 years old or the age of majority in your jurisdiction</li>
-                <li>• You must provide accurate and complete information during the claim process</li>
-                <li>• You must have legitimate access to the wallet addresses you provide</li>
-                <li>• You agree to comply with all applicable laws and regulations</li>
-              </ul>
-
-              <h3 className="text-green-400 font-semibold">3. Token Distribution</h3>
-              <p>
-                XRPB tokens will be distributed after verification in Q2 2025. Distribution is subject to successful
-                completion of the verification process and compliance with these terms.
-              </p>
-
-              <h3 className="text-green-400 font-semibold">4. Prohibited Activities</h3>
-              <ul className="space-y-1 ml-4">
-                <li>• Creating multiple accounts or false identities</li>
-                <li>• Providing false or misleading information</li>
-                <li>• Attempting to manipulate or exploit the claim process</li>
-                <li>• Using the platform for illegal activities</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400 flex items-center">
-                <Shield className="mr-2 h-5 w-5" />
-                Privacy Policy
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
-              <h3 className="text-green-400 font-semibold">Information We Collect</h3>
-              <ul className="space-y-1 ml-4">
-                <li>• Email addresses for communication and verification</li>
-                <li>• Wallet addresses for token distribution</li>
-                <li>• Transaction data related to token claims</li>
-                <li>• Technical information such as IP addresses and browser data</li>
-              </ul>
-
-              <h3 className="text-green-400 font-semibold">How We Use Your Information</h3>
-              <ul className="space-y-1 ml-4">
-                <li>• To process and verify token claims</li>
-                <li>• To communicate important updates and information</li>
-                <li>• To prevent fraud and ensure platform security</li>
-                <li>• To improve our services and user experience</li>
-              </ul>
-
-              <h3 className="text-green-400 font-semibold">Data Protection</h3>
-              <p>
-                We implement industry-standard security measures to protect your personal information. We do not sell,
-                trade, or rent your personal information to third parties.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400 flex items-center">
-                <Users className="mr-2 h-5 w-5" />
-                Community Guidelines
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
-              <h3 className="text-green-400 font-semibold">Respectful Communication</h3>
-              <p>
-                Treat all community members with respect and courtesy. Harassment, discrimination, or abusive behavior
-                will not be tolerated.
-              </p>
-
-              <h3 className="text-green-400 font-semibold">Accurate Information</h3>
-              <p>
-                Share only accurate and verified information. Spreading misinformation or false claims about the project
-                or tokens is prohibited.
-              </p>
-
-              <h3 className="text-green-400 font-semibold">No Spam or Self-Promotion</h3>
-              <p>
-                Avoid excessive posting, spam, or unauthorized promotional content. Keep discussions relevant to
-                RippleBids and the XRPB token ecosystem.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-yellow-500/10 border-yellow-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-yellow-400 flex items-center">
-                <AlertTriangle className="mr-2 h-5 w-5" />
-                Important Disclaimers
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
-              <div className="space-y-3">
-                <p>
-                  <strong className="text-yellow-400">Risk Warning:</strong> Cryptocurrency investments carry inherent
-                  risks. The value of XRPB tokens may fluctuate significantly.
-                </p>
-
-                <p>
-                  <strong className="text-yellow-400">No Investment Advice:</strong> Nothing on this platform
-                  constitutes financial or investment advice. Always do your own research.
-                </p>
-
-                <p>
-                  <strong className="text-yellow-400">Regulatory Compliance:</strong> Users are responsible for
-                  complying with their local laws and regulations regarding cryptocurrency ownership and trading.
-                </p>
-
-                <p>
-                  <strong className="text-yellow-400">Address Verification:</strong> RippleBids is not responsible for
-                  tokens sent to incorrect addresses. Always double-check your wallet addresses.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-xl font-bold text-green-400 mb-4">Questions?</h3>
-              <p className="text-gray-300 mb-4">
-                If you have any questions about these terms and policies, please contact our support team.
-              </p>
-              <p className="text-sm text-gray-400">Last updated: January 2025</p>
-            </CardContent>
-          </Card>
+      <footer className="mt-20 text-center text-gray-400">
+        <p className="mb-3">© 2025 RippleBids. All rights reserved.</p>
+        <div className="flex justify-center gap-6 text-green-400 text-xl">
+          <a href="https://x.com/ripplebids" target="_blank" rel="noopener noreferrer"><Twitter className="hover:text-green-300" /></a>
+          <a href="https://t.me/+MFu9bioLH2Q1NWYx" target="_blank" rel="noopener noreferrer"><Send className="hover:text-green-300" /></a>
+          <a href="https://www.tiktok.com/@ripplebids" target="_blank" rel="noopener noreferrer"><Music className="hover:text-green-300" /></a>
+          <a href="https://discord.gg/WcCnq3DrpB" target="_blank" rel="noopener noreferrer"><Eraser className="hover:text-green-300" /></a>
         </div>
-      </div>
+      </footer>
     </div>
-  )
-}
+  );
+};
+
+const policySections = [
+  {
+    title: 'Platform Rules',
+    content: {
+      intro: 'RippleBids is a community-driven marketplace. Users must adhere to these rules to maintain integrity:',
+      items: [
+        { label: 'Eligibility:', text: 'Users must be 18+ and comply with local laws. KYC may be required for high-value transactions or presale tiers ($1,001+).' },
+        { label: 'Prohibited Activities:', text: 'No illegal activities, including fraud, money laundering, or trading prohibited items. Violations result in account suspension.' },
+        { label: 'Content Guidelines:', text: 'Listings must be accurate and free of offensive material. RippleBids may remove non-compliant listings.' },
+        { label: 'Security Responsibility:', text: 'Users must secure their XRPL wallets. RippleBids is not liable for losses due to compromised wallets or user error.' },
+        { label: 'Fees:', text: 'Platform fees range from 1.5–3.5%, payable in XRPB or XRP.' }
+      ]
+    }
+  },
+  {
+    title: 'XRPB Presale Terms',
+    content: {
+      intro: 'The XRPB token presale (500M of 3B total supply) is governed by these terms to protect RippleBids and investors:',
+      items: [
+        { label: 'Purchase Process:', text: 'Buy XRPB at 5,000 XRPB per 1 XRP via XRPL wallets. Contributions are recorded on the XRP Ledger.' },
+        { label: 'Non-Refundable:', text: 'Presale purchases are final, except as required by applicable law.' },
+        { label: 'Distribution:', text: 'Tokens will be distributed in Q3 2025 post audit and contract deployment.' },
+        { label: 'Risk Disclosure:', text: 'Cryptocurrencies are volatile. Investors assume all risks.' },
+        { label: 'AML/KYC Compliance:', text: 'RippleBids complies with AML and KYC regulations.' },
+        { label: 'Fund Security:', text: 'Funds are held in a 5/5 multi-signature wallet.' }
+      ]
+    }
+  },
+  {
+    title: 'Privacy Policy',
+    content: {
+      intro: 'RippleBids values your privacy and complies with GDPR, CCPA, and other data protection laws:',
+      items: [
+        { label: 'Data Collection:', text: 'We collect XRPL wallet addresses, optional emails, and public transaction data.' },
+        { label: 'Data Use:', text: 'Used for processing, support, improvement, and compliance.' },
+        { label: 'Data Sharing:', text: 'No third-party sharing except as required by law.' },
+        { label: 'Data Security:', text: 'Protected with AES-256 encryption and secure servers.' },
+        { label: 'User Rights:', text: 'Users may request data access, correction, or deletion.' },
+        { label: 'Cookies:', text: 'Only essential cookies are used without tracking.' }
+      ]
+    }
+  },
+  {
+    title: 'Legal Protections',
+    content: {
+      intro: 'RippleBids is incorporated in Ohio, USA, and operates under these legal frameworks:',
+      items: [
+        { label: 'Intellectual Property:', text: 'RippleBids’ logo, code, and content are copyrighted.' },
+        { label: 'Liability Limitation:', text: 'RippleBids is not liable for indirect damages or user error.' },
+        { label: 'Termination:', text: 'Accounts may be terminated for policy violations.' },
+        { label: 'Governing Law:', text: 'Ohio law governs all activities. Arbitration in Chicago, IL.' },
+        { label: 'Indemnification:', text: 'Users agree to indemnify RippleBids for platform-related actions.' }
+      ]
+    }
+  },
+  {
+    title: 'Dispute Resolution',
+    content: {
+      intro: 'We prioritize fair resolutions for all disputes:',
+      items: [
+        { label: 'XRPL Bids:', text: 'Escrow ensures secure transactions for buyers and sellers.' },
+        { label: 'Mediation:', text: 'Disputes resolved via decentralized governance post-2026.' },
+        { label: 'Arbitration:', text: 'Legal disputes resolved via arbitration in Chicago, IL.' },
+        { label: 'Contact:', text: 'For issues, email support@ripplebids.com.' }
+      ]
+    }
+  }
+];
+
+export default PolicyPage;

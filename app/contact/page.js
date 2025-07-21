@@ -1,171 +1,105 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
-import { Button } from "../components/ui/button"
-import { Input } from "../components/ui/input"
-import { Label } from "../components/ui/label"
-import { Textarea } from "../components/ui/textarea"
-import { Mail, MessageSquare, Phone } from "lucide-react"
+"use client"
+import React from "react";
+import {
+  Twitter,
+  Send,
+  Disc,
+  Music2,
+} from "lucide-react";
 
-export default function ContactPage() {
+const ContactPage = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (email && message) {
+      const subject = encodeURIComponent("RippleBids Support Inquiry");
+      const body = encodeURIComponent(message);
+      window.location.href = `mailto:support@ripplebids.com?subject=${subject}&body=${body}`;
+    } else {
+      alert("Please fill out both fields.");
+    }
+  };
+
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-green-400 glow-text mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-300">Get in touch with the RippleBids team</p>
-        </div>
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black to-gray-900">
+      <section className="max-w-5xl mx-auto bg-black/60 border border-green-500/20 backdrop-blur-md p-8 rounded-2xl shadow-lg">
+        <h2 className="text-3xl font-semibold text-green-400 mb-4">Contact RippleBids</h2>
+        <p className="text-gray-300 mb-6">
+          We’re here to connect! Whether you have questions, feedback, or need support, our Ohio-based team is ready to respond via
+          <a
+            href="mailto:support@ripplebids.com"
+            className="text-green-400 underline hover:text-green-300 ml-1"
+          >
+            support@ripplebids.com
+          </a>. Drop us a message below!
+        </p>
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+            className="w-full bg-gray-800 text-white p-3 rounded-lg border border-green-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <textarea
+            id="message"
+            placeholder="Your Message"
+            required
+            rows="5"
+            className="w-full bg-gray-800 text-white p-3 rounded-lg border border-green-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-2 px-4 rounded-lg transition duration-300"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Contact Form */}
-          <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-green-400 flex items-center">
-                <MessageSquare className="mr-2 h-5 w-5" />
-                Send us a Message
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName" className="text-green-400">
-                    First Name
-                  </Label>
-                  <Input
-                    id="firstName"
-                    placeholder="Your first name"
-                    className="bg-black/50 border-green-500/30 text-white placeholder-gray-400 focus:border-green-500"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="text-green-400">
-                    Last Name
-                  </Label>
-                  <Input
-                    id="lastName"
-                    placeholder="Your last name"
-                    className="bg-black/50 border-green-500/30 text-white placeholder-gray-400 focus:border-green-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="email" className="text-green-400">
-                  Email Address
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  className="bg-black/50 border-green-500/30 text-white placeholder-gray-400 focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="subject" className="text-green-400">
-                  Subject
-                </Label>
-                <Input
-                  id="subject"
-                  placeholder="What's this about?"
-                  className="bg-black/50 border-green-500/30 text-white placeholder-gray-400 focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="message" className="text-green-400">
-                  Message
-                </Label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell us more about your inquiry..."
-                  rows={5}
-                  className="bg-black/50 border-green-500/30 text-white placeholder-gray-400 focus:border-green-500"
-                />
-              </div>
-
-              <Button className="w-full bg-green-500 hover:bg-green-600 text-black font-bold">Send Message</Button>
-            </CardContent>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-green-400">Get in Touch</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-start space-x-3">
-                  <Mail className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-green-400 mb-1">Email Support</h3>
-                    <p className="text-gray-300 text-sm mb-2">For general inquiries and support</p>
-                    <a href="mailto:support@ripplebids.com" className="text-green-400 hover:underline">
-                      support@ripplebids.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <MessageSquare className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-green-400 mb-1">Community</h3>
-                    <p className="text-gray-300 text-sm mb-2">Join our community discussions</p>
-                    <div className="space-y-1">
-                      <a href="#" className="block text-green-400 hover:underline text-sm">
-                        Discord Server
-                      </a>
-                      <a href="#" className="block text-green-400 hover:underline text-sm">
-                        Telegram Group
-                      </a>
-                      <a href="#" className="block text-green-400 hover:underline text-sm">
-                        Twitter/X
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <Phone className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-green-400 mb-1">Business Inquiries</h3>
-                    <p className="text-gray-300 text-sm mb-2">For partnerships and business development</p>
-                    <a href="mailto:business@ripplebids.com" className="text-green-400 hover:underline">
-                      business@ripplebids.com
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-green-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-green-400">FAQ</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-green-400 mb-2">When will tokens be distributed?</h3>
-                  <p className="text-gray-300 text-sm">
-                    XRPB tokens will be distributed after verification in Q2 2025.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-green-400 mb-2">How do I claim my tokens?</h3>
-                  <p className="text-gray-300 text-sm">
-                    Visit our claim page and follow the step-by-step process to register your wallet addresses.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-green-400 mb-2">Is there a minimum claim amount?</h3>
-                  <p className="text-gray-300 text-sm">
-                    No, there is no minimum claim amount. All eligible participants can claim their allocated tokens.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+      <footer className="mt-12 text-center text-gray-400">
+        <div className="footer-content p-6">
+          <p>© 2025 RippleBids. All rights reserved.</p>
+          <div className="social-links mt-4 flex justify-center gap-6 text-green-400 text-[24px]">
+            <a
+              href="https://x.com/ripplebids"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <Twitter className="hover:text-green-300 transition" />
+            </a>
+            <a
+              href="https://t.me/+MFu9bioLH2Q1NWYx"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <Send className="hover:text-green-300 transition" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@ripplebids"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <Music2 className="hover:text-green-300 transition" />
+            </a>
+            <a
+              href="https://discord.gg/WcCnq3DrpB"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+            >
+              <Disc className="hover:text-green-300 transition" />
+            </a>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
-}
+  );
+};
+
+export default ContactPage;
