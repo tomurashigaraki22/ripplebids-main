@@ -16,6 +16,7 @@ export default function Navbar() {
     { name: "Rules & Policy", href: "/rules-policy" },
     { name: "Tokenomics", href: "/tokenomics" },
     { name: "Affiliate", href: "/affiliate" },
+    { name: "Bridge Tool", href: "https://xrplbridge.ripplebids.com"}
   ]
 
   return (
