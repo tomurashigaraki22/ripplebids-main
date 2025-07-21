@@ -3,8 +3,10 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
+import Logo from '../../public/logo.jpg'
 import { Button } from "../components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,9 +28,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="text-black font-bold text-sm">R</span>
-            </div>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Image src={Logo} alt="RippleBids Logo"/>
+              </div>
             <span className="text-xl font-bold text-green-400">RippleBids</span>
           </Link>
 
