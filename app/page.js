@@ -82,7 +82,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* XRPL EVM Sidechain - Primary */}
                 <a
-                  href="https://xrise33.com/?inputCurrency=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&outputCurrency=0x6d8630D167458b337A2c8b6242c354d2f4f75D96&blockchainID=1440000"
+                  href="https://horizonxrpl.com/wallet?ref=PjSm38RMVC"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden"
